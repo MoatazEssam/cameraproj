@@ -1,0 +1,174 @@
+:root {
+  --primarycolor: hsl(290, 64%, 25%);
+  --secondarycolor: hsl(278, 89%, 48%);
+  --gradientcolor: linear-gradient(
+    to right,
+    hsl(190, 72%, 62%),
+    hsl(278, 89%, 48%)
+  );
+  --gradientcolor2: linear-gradient(
+    to right,
+    hsl(290, 63%, 51%),
+    hsl(279, 90%, 49%)
+  );
+  --whitecolor: hsl(0, 0%, 100%);
+  --whitecolordeam: hsl(0, 0%, 93%);
+  --blackcolor: hsl(201, 33%, 16%);
+  --textcolor: hsl(240, 4%, 36%);
+  --graytext: rgb(190, 190, 190);
+  --inputcolor: rgb(239, 239, 239);
+  --bodycolor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.formpage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(32, 33, 36, 0.4);
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    mix-blend-mode: hard-light;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+  .form {
+    overflow: hidden;
+    background-color: var(--whitecolor);
+    z-index: 5;
+    width: max-content;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--blackcolor);
+    margin: 1rem;
+    border-radius: 7px;
+    .title {
+      
+      width: 100%;
+      padding: 0.5rem 0.5rem;
+      background: var(--primarycolor);
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      overflow: hidden;
+      h1 {
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--whitecolor);
+      }
+    }
+    .content {
+      height: max-content;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0.5rem;
+      .inputgroup {
+        position: relative;
+        width: 100%;
+        padding: 5px;
+        margin: 0.5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        &:hover{
+          .filedicon{
+            color: var(--secondarycolor);
+          }
+        }
+        .filedicon{
+          font-size: 1.5rem;
+         position: absolute;
+         right: 1rem;
+         bottom: 1rem;
+         font-weight: 600;
+        }
+      }
+      .label {
+        font-weight: 600;
+        display: block;
+        color: var(--textcolor);
+      }
+      .input {
+        padding: 0px 0.5rem;
+        border-radius: 0.5rem;
+        height: 44px;
+        border: 2px solid transparent;
+        font-size: 1rem;
+        background-color: #05060f17;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          outline: none;
+          border-color: #05060f;
+        }
+      }
+      .btn {
+        display: flex;
+        border-radius: 6px;
+        margin: 0.5rem 0rem;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--whitecolor);
+        background: var(--gradientcolor2);
+        position: relative;
+        transition: 0.4 ease-in-out;
+        overflow: hidden;
+        span {
+          transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+          &:hover {
+            transform: translateX(7px);
+          }
+        }
+      }
+      .icon {
+        font-size: 17px;
+        margin-right: 1rem;
+        margin-left:0;
+        margin-top: 0.2rem;
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .btn:hover{
+        .icon{
+          transform: translateX(5px) rotate(45deg);
+        }
+        span{
+          transform: translateX(5px);
+        }
+      }
+
+      .btn::before {
+        width: 160px;
+        height: 250px;
+        position: absolute;
+        content: "";
+        background: var(--primarycolor);
+        border-radius: 50%;
+        left: -100%;
+        top: 0;
+        transition-duration: 0.3s;
+        mix-blend-mode: hue;
+      }
+      .btn:hover::before {
+        transition-duration: 0.3s;
+        transform: translate(100%, -10%);
+      }
+    }
+  }
+}

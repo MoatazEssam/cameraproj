@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* colors and styling*/
+:root {
+  --primarycolor: hsl(290, 64%, 25%);
+  --secondarycolor:   hsl(278, 89%, 48%);
+  --gradientcolor: linear-gradient(
+    to right,
+    hsl(190, 72%, 62%),
+    hsl(278, 89%, 48%)
+  );
+  --whitecolor: hsl(0, 0%, 100%);
+  --whitecolordeam: hsl(0, 0%, 93%);
+  --blackcolor: hsl(201, 33%, 16%);
+  --textcolor: hsl(240, 4%, 36%);
+  --graytext: rgb(190, 190, 190);
+  --inputcolor: rgb(239, 239, 239);
+  --bodycolor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
 }
+html{
+  scroll-behavior: smooth;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.section {
+  padding: 4rem 0 2rem;
+}
+.container {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.flex {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.grid {
+  display: grid;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--gradientcolor);
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3 ease-in-out;
+}
+.btn a {
+  color: var(--whitecolor);
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--secondarycolor);
+}
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+input {
+  font-size: 100%;
+}
+body{
+    background-color: var(--bodycolor);
+    height: 100%;
+}
+/* this is  general style for the page */
+@media screen and (min-width :1240px){
+.container{
+  width: 80% !important;
+  margin: auto !important;
+}
+.section{
+  padding: 6rem 0 4rem;
+}
+}
+@media screen and (min-width :2560px){
+body{
+  zoom: 1.7;
+}
 }
